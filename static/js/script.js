@@ -1,9 +1,9 @@
-// const navToggle = document.querySelector('.nav-toggle');
-// const navContainer = document.querySelector('.nav-container');
+const navToggle = document.querySelector('.nav-toggle');
+const navContainer = document.querySelector('.nav-container');
 
-// navToggle.addEventListener('click', () => {
-//   navContainer.classList.toggle('nav-open');
-// });
+navToggle.addEventListener('click', () => {
+  navContainer.classList.toggle('nav-open');
+});
 
 var hours = 12; // устанавливаем количество часов для таймера
 var minutes = 0; // устанавливаем количество минут для таймера
@@ -85,3 +85,18 @@ showSlide(slideIndex);
 
 
 
+var slideIndex1 = 0;
+showSlides();
+
+function showSlides() {
+  var slides = document.getElementsByClassName("slide-vertical");
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active"); // Удаляем класс active у всех слайдов
+  }
+  slideIndex1++;
+  if (slideIndex1 > slides.length) {
+    slideIndex1 = 1;
+  }
+  slides[slideIndex1-1].classList.add("active"); // Добавляем класс active для текущего слайда
+  setTimeout(showSlides, 3000); // Задержка в 3 секунды между сменой слайдов
+}
