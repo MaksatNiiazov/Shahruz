@@ -12,7 +12,7 @@ section{
 }
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-transform: uppercase;
 }
@@ -147,6 +147,40 @@ section{
   text-align: center;
 }
 
+#timer{
+  display: flex;
+  justify-content: center;
+}
+#timer div{
+  color: #F3F3F3;
+  padding: 20px;
+  border: 2px solid #F3F3F3;
+  margin: 5px;
+  border-radius: 100%;
+}
+
+form input{
+  padding: 16px;
+  width: 400px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 50px;
+}
+form div{
+  padding: 16px;
+  width: 400px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 50px;
+}
+form .old-price{
+  background-color: #F3F3F3;
+}
+form .buy-button{
+  color: #4E4D4D;
+  background-color: #FFFC00;
+  border: 1px black solid;
+}
 footer{
   padding: 20px;
   color: #d7d5d5;
