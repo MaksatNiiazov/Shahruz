@@ -1,4 +1,8 @@
 /* Стили для больших экранов */
+body{
+  background-color: #F3F3F3;
+  font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -7,18 +11,20 @@
 
 .nav-item {
   margin-right: 20px;
-  border: black solid 1px;
+
 }
 .nav-toggle{
   display: none;
 }
 .slider {
+  color: #F3F3F3;
   position: relative;
-  width: 100%;
+  width: 110%;
   height: 50px;
   overflow: hidden;
   border: green 1px solid;
   text-align: center;
+  background-color: black;
 }
 
 .slides {
@@ -42,8 +48,15 @@
 .slide.active {
   opacity: 1;
 }
+.title{
+  text-align: center;
+}
+.main-img{
+  text-align: center;
+  overflow: hidden;
+  border-radius: 50px;
 
-
+}
 /* Стили для маленьких экранов */
 @media screen and (max-width: 768px) {
   .nav-container {
