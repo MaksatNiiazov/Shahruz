@@ -1,9 +1,9 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navContainer = document.querySelector('.nav-container');
+// const navToggle = document.querySelector('.nav-toggle');
+// const navContainer = document.querySelector('.nav-container');
 
-navToggle.addEventListener('click', () => {
-  navContainer.classList.toggle('nav-open');
-});
+// navToggle.addEventListener('click', () => {
+//   navContainer.classList.toggle('nav-open');
+// });
 
 var hours = 12; // устанавливаем количество часов для таймера
 var minutes = 0; // устанавливаем количество минут для таймера
@@ -46,3 +46,42 @@ function startTimer() {
 }
 
 startTimer();
+
+
+const sliderContainer = document.querySelector('.slider-container');
+const sliderPrevButton = document.querySelector('.slider-prev');
+const sliderNextButton = document.querySelector('.slider-next');
+const slides = document.querySelectorAll('.slider-slide');
+let slideIndex = 0;
+
+function showSlide(index) {
+  sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function showPrevSlide() {
+  slideIndex--;
+  if (slideIndex < 0) {
+    slideIndex = slides.length - 1;
+  }
+  showSlide(slideIndex);
+}
+
+function showNextSlide() {
+  slideIndex++;
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  }
+  showSlide(slideIndex);
+}
+
+sliderPrevButton.addEventListener('click', showPrevSlide);
+sliderNextButton.addEventListener('click', showNextSlide);
+
+setInterval(() => {
+  showNextSlide();
+}, 3000);
+
+showSlide(slideIndex);
+
+
+
