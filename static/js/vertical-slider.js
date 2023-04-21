@@ -15,5 +15,5 @@ slider.addEventListener('mouseover', () => {
 });
 
 slider.addEventListener('mouseleave', () => {
-  interval = setInterval(nextSlide, 5000);
+  interval = setInterval(nextSlide, 1000);
 });
