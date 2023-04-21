@@ -72,7 +72,7 @@
             <div class="price-container">
                 <div class="old-price">3500 сом</div>
                 <div class="new-price">3000 сом</div>
-                <div type="button" class="buy-button">Купить</div>
+                <a href="#buy-form"><div type="button" class="buy-button">Купить</div></a>
             </div>
         </div>
     </section>
@@ -120,6 +120,16 @@
         </div>
     </section>
     <section class="green">
+        <div class="green-sale">
+        <h2>Название товара</h2>
+        <div>
+            скидка 50%
+        </div>
+        </div>
+        <div class="img">
+            <img src="static/img/0.jpg" alt="">
+        </div>
+        <h4>До конца акции осталось:</h4>
             <div id="timer">
                 <div>
                   <span id="hours"></span>ч
@@ -132,7 +142,7 @@
                 </div>
             </div>
 
-        <form>
+        <form id="buy-form">
           <input type="text" id="name" name="name" placeholder="Введите ваше имя"><br>
           <input type="tel" id="phone" name="phone" placeholder="Введите ваш номер телефона"><br>
             <div class="old-price">3500 сом</div>

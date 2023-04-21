@@ -3,6 +3,9 @@ body{
   background-color: #F3F3F3;
   font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
 }
+a{
+  text-decoration: none;
+}
 section{
   padding: 24px;
 }
@@ -70,6 +73,7 @@ section{
 .img{
   border-radius: 20px;
   overflow: hidden;
+
 }
 .share{
   color: #F0534F;
@@ -143,9 +147,29 @@ section{
   text-align: center;
 }
 .green{
+  padding-top: 50px;
   background-color: #8BC24A;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+align-items: center;
 }
+
+.green-sale{
+  color: #4E4D4D;
+}
+.green-sale div{
+  background-color: #FFFC00;
+  margin: 20px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 50px;
+}
+.green h4{
+  color: #F3F3F3;
+}
+
 
 #timer{
   display: flex;
@@ -153,7 +177,7 @@ section{
 }
 #timer div{
   color: #F3F3F3;
-  padding: 20px;
+  padding: 20px 17px;
   border: 2px solid #F3F3F3;
   margin: 5px;
   border-radius: 100%;
