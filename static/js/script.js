@@ -66,7 +66,7 @@ sliderNextButton.addEventListener('click', showNextSlide);
 
 setInterval(() => {
   showNextSlide();
-}, 3000);
+}, 5000);
 
 showSlide(slideIndex);
 

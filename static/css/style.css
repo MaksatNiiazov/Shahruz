@@ -19,9 +19,11 @@ section{
 .nav-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  text-align: center;
+  
 }
 
 .nav-item {
