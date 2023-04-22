@@ -5,47 +5,34 @@ navToggle.addEventListener('click', () => {
   navContainer.classList.toggle('nav-open');
 });
 
-var hours = 12; // устанавливаем количество часов для таймера
-var minutes = 0; // устанавливаем количество минут для таймера
-var seconds = 0; // устанавливаем количество секунд для таймера
+// Задаем дату и время окончания таймера
+var countDownDate = new Date("April 30, 2030 23:59:59").getTime();
 
-function startTimer() {
-  var hoursElement = document.getElementById("hours");
-  var minutesElement = document.getElementById("minutes");
-  var secondsElement = document.getElementById("seconds");
+// Обновляем таймер каждую секунду
+var x = setInterval(function() {
 
-  hoursElement.innerHTML = hours < 10 ? "0" + hours : hours; // добавляем ведущий 0 для часов, если они меньше 10
-  minutesElement.innerHTML = minutes < 10 ? "0" + minutes : minutes; // добавляем ведущий 0 для минут, если они меньше 10
-  secondsElement.innerHTML = seconds < 10 ? "0" + seconds : seconds; // добавляем ведущий 0 для секунд, если они меньше 10
+  // Получаем текущую дату и время
+  var now = new Date().getTime();
 
-  var timer = setInterval(function() {
-    seconds--; // уменьшаем количество секунд на 1
+  // Вычисляем разницу между текущим временем и временем окончания
+  var distance = countDownDate - now;
 
-    if (seconds < 0) {
-      seconds = 59;
-      minutes--; // уменьшаем количество минут на 1
-    }
+  // Вычисляем количество часов, минут и секунд
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, "0");
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, "0");
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, "0");
 
-    if (minutes < 0) {
-      minutes = 59;
-      hours--; // уменьшаем количество часов на 1
-    }
+  // Отображаем количество часов, минут и секунд в соответствующих элементах
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
 
-    if (hours < 0) {
-      clearInterval(timer); // останавливаем таймер, когда время истекло
-      hours = 12; // устанавливаем количество часов заново
-      minutes = 0; // устанавливаем количество минут заново
-      seconds = 0; // устанавливаем количество секунд заново
-      startTimer(); // запускаем таймер заново
-    }
-
-    hoursElement.innerHTML = hours < 10 ? "0" + hours : hours; // добавляем ведущий 0 для часов, если они меньше 10
-    minutesElement.innerHTML = minutes < 10 ? "0" + minutes : minutes; // добавляем ведущий 0 для минут, если они меньше 10
-    secondsElement.innerHTML = seconds < 10 ? "0" + seconds : seconds; // добавляем ведущий 0 для секунд, если они меньше 10
-  }, 1000); // запускаем таймер каждую секунду
-}
-
-startTimer();
+  // Если таймер достиг нуля, останавливаем его и выводим сообщение
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "Время истекло";
+  }
+}, 1000);
 
 
 const sliderContainer = document.querySelector('.slider-container');
